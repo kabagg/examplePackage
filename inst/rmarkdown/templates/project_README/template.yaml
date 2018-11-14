@@ -1,0 +1,6 @@
+name: RMD template for a project README file
+description: >
+  Template for Keith's Preferred README setup,
+  including sections for an Overview, Brief Results,
+  and Workflow.
+create_dir: false

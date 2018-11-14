@@ -1,0 +1,71 @@
+---
+title: "README"
+author: "Keith Baggerly"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+    code_folding: hide
+    fig_caption: true
+  github_document:
+    toc: true
+  md_document:
+    toc: true
+  word_document:
+    toc: true
+---
+
+# Overview
+
+The goal of this project is to...
+
+The context and hypothesis...
+
+Why we care (e.g., if true, this would mean we could treat 
+patients better)
+
+To address this, we have collected data on ?? samples
+(how many?) using ?? assays (e.g., PCR, microarrays, etc)
+along with associated metadata (e.g., which samples received
+which treatment).
+If the hypothesis is true, we expect to see ??, 
+whereas we would expect to see ?? otherwise.
+
+To test this, we will apply the following statistical
+test(s), and look for...
+
+Are there any sanity checks we know to apply _a priori_?
+(E.g., if gene ABC doesn't change in response to treatment,
+should we suspect something might be wrong with the experiment?)
+
+# Brief Results
+
+* [01_gather_data](results/01_gather_data.md) downloads the 
+raw datasets used from the web.
+
+# Running the Analysis
+
+Roughly, our analyses involve running the R and Rmd files
+in [R](R) in the order they appear. 
+
+Run [R/95_make_clean.R](R/95_make_clean.R) to clear out any
+downstream products.
+
+Run [R/99_make_all.R](R/99_make_all.R) to re-run the analysis 
+from beginning to end, including generating this README.
+
+Raw data from the web is stored in [data](data).
+
+Reports and interim results are stored in [results](results).
+
+## Required Libraries
+
+These analyses were performed in RStudio 
+(insert version number here; this can be obtained in 
+an interactive session with `RStudio.Version()$version`),
+using `r version[["version.string"]]`, 
+and use (in alphabetical order):
+
+* here       `r packageVersion("here")`
+* rmarkdown  `r packageVersion("rmarkdown")`

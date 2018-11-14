@@ -1,0 +1,91 @@
+---
+title: "A Template README"
+author: "Keith Baggerly"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{A Template README}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+After setting up the folder structure, the next thing I 
+try to do, before I do any analysis, is write a README file. 
+I want to get the analysis files onto the web so my 
+collaborators can see them asap, and since GitHub (and
+its local instantiations) render README.md in html 
+automatically, this gets my description of the project
+up there quickly. 
+
+I try to use a consistent format for my README files, 
+and this is most readily accomplished if I start from 
+a template. 
+
+Per [RStudio's rmarkdown documentation](https://rmarkdown.rstudio.com/developer_document_templates), we can bundle a document template with a package
+and make it visible to `rmarkdown` by creating two files:
+
+* /inst/rmarkdown/templates/template\_name/skeleton/skeleton.Rmd
+* /inst/rmarkdown/templates/template\_name/template.yaml
+
+The common path to these files, which is 
+
+/inst/rmarkdown/templates/project\_README
+
+for our README.Rmd template, isn't intuitively guessable, 
+so we're making sure to specify it here. The template.yaml
+file is typically quite small; our entire one here is
+
+```
+name: RMD template for a project README file
+description: >
+  Template for Keith's Preferred README setup,
+  including sections for an Overview, Brief Results,
+  and Workflow.
+create_dir: false
+```
+
+The `skeleton.Rmd`
+file is the template Rmd file itself. 
+
+When you invoke
+
+File/New File/R Markdown.../From Template
+
+RStudio will show a popup window which will let you 
+select the template you want from those rmarkdown
+knows about (which are all the templates in packages
+which are currently loaded). The display popup will 
+show the "name" from template.yaml to identify it,
+so in this case it shows
+
+"RMD template for a project README file"
+
+This is pretty redundant; we could omit the 
+"RMD template for a" prefix without any 
+loss of meaning. Using "Project README (Rmd)"
+is probably better. The other listed options are
+"Package Vignette (HTML)" and "GitHub Document (Markdown)"
+
+My default README begins with a prose overview.
+I outline 
+
+* my understanding of the goal of the project, 
+* the type of data we have and how it pertains to our goal, 
+* the analyses I intend to perform, 
+* a description of what would constitute "success", and 
+* a list of any major questions I still have, if any. 
+
+Once the README is written and posted, I try to share
+the link with my collaborators. I ask them if they 
+think my description is fair and accurate, and let
+them know I'll wait for their confirmation before I
+proceed further. Ideally, this lets me catch big
+gaps in my understanding early, and prevents me
+from wasting time on analyses they didn't want done.
